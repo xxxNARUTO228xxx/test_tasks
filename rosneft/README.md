@@ -1,3 +1,6 @@
+https://boosters.pro/championship/rsc_sandbox/overview
+https://boosters.pro/championship/seismic_challenge/overview
+
 Description
 
 The oil company invites you to take part in the Seismic Data Analysis Championship. Estimation of seismic horizons in the cube of amplitudes.
