@@ -1,0 +1,7 @@
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <textarea type="text" name="textField" cols=100 rows=10>{{text}}</textarea><br>
+    <input type="submit" name="submit" value="Input" />
+</form>
+<h1>Emotion: {{label}}</h1>
+<h1>Probability: {{score}}</h1>

@@ -1,0 +1,7 @@
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <textarea type="text" name="textField1" cols=100 rows=10>{{text1}}</textarea><br>
+    <textarea type="text" name="textField2" cols=100 rows=10>{{text2}}</textarea><br>
+    <input type="submit" name="submit" value="Input" />
+</form>
+<h1>Cos-score: {{score}}</h1>
