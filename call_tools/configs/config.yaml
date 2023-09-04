@@ -1,0 +1,44 @@
+common:
+  host: '0.0.0.0'
+  port: 8000
+  exts:
+    - wav
+    - mp3
+    - mp4
+  save_dir: ./media
+  save_name: 'audio'
+  save_ext: 'wav'
+  desc_audio: audio file must have one of these extensions ${common.exts}
+
+modify:
+  desc_volume: modify volume (dB) for audio file - float
+  desc_speed: modify speed for audio file - float > 0.0
+    
+speech2text:
+  langs:
+    - rus
+    - eng
+  weights: ./weights
+  desc_lang: rus or eng - str
+  rus:
+    verbose: False
+    hmm: ${speech2text.weights}/rus/zero_ru_cont_8k_v3/zero_ru.cd_cont_4000
+    lm: ${speech2text.weights}/rus/zero_ru_cont_8k_v3/ru.lm
+    dic: ${speech2text.weights}/rus/zero_ru_cont_8k_v3/ru.dic
+  eng:
+    verbose: False
+    hmm: ${speech2text.weights}/eng/cmusphinx-en-us-8khz-5.2
+    lm: ${speech2text.weights}/eng/en-70k-0.1.lm
+    dic: ${speech2text.weights}/eng/cmudict-en-us.dict
+
+response_errors:
+  file_format:
+    status_code: 415
+    message: Unsupported Media Type - allowed ${common.exts} only!
+  params:
+    status_code: 406
+    message: Not Acceptable parameters!
+
+test:
+  test_files: ./test_files
+  response_files: ./tmp
